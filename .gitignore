@@ -30,7 +30,7 @@ sysinfo.txt
 /*.tmp
 /*.svd
 
-.idea
+.idea/
  
 # ============ #
 # OS generated #
