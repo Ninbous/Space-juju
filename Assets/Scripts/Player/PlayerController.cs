@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityStandardAssets.CrossPlatformInput;
 
 [System.Serializable]
 public class Boundary
@@ -13,10 +14,14 @@ public class PlayerController : MonoBehaviour
     public float tilt;
     public Boundary boundary;
 
+    public Joystick joystick;
+
     void FixedUpdate ()
     {
-        float moveHorizontal = Input.GetAxis ("Horizontal");
-        float moveVertical = Input.GetAxis ("Vertical");
+//        float moveHorizontal = CrossPlatformInputManager.GetAxis ("Horizontal");
+//        float moveVertical = CrossPlatformInputManager.GetAxis ("Vertical");
+        float moveHorizontal = joystick.Horizontal;
+        float moveVertical = joystick.Vertical;
 
         Vector3 movement = new Vector3 (moveHorizontal, 0.0f, moveVertical);
         GetComponent<Rigidbody>().velocity = movement * speed;
