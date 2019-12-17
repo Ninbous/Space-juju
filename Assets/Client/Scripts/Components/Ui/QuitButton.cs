@@ -1,8 +1,13 @@
+using Leopotam.Ecs;
 using UnityEngine;
 
 namespace SpaceJuJu {
-    sealed class QuitButton {
-        // Add your data here.
+    sealed class QuitButton : IEcsAutoReset
+    {
         public RectTransform rectTransform;
+        
+        void IEcsAutoReset.Reset () {
+            rectTransform = null;
+        }
     }
 }

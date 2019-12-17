@@ -7,9 +7,16 @@ namespace SpaceJuJu {
         public float x;
         public float y;
     }
-    sealed class Unit {
+    sealed class Unit : IEcsAutoReset
+    {
         public Health health;
         public Position position;
         public Transform transform;
+        
+        void IEcsAutoReset.Reset () {
+            transform = null;
+        }
     }
+    
+    
 }

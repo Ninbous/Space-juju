@@ -10,4 +10,5 @@ public static class TagsDictionary
     
     //Ui
     public const string UiQuitButton = "UiQuitButton";
+    public const string UiStartButton = "UiStartButton";
 }

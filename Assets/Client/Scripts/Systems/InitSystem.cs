@@ -18,7 +18,6 @@ namespace SpaceJuJu
                 unitComponent.position.x = pos.x;
                 unitComponent.position.y = pos.z;
                 unitComponent.transform = tr;
-                Debug.Log("We are here!");
             }
         }
     }

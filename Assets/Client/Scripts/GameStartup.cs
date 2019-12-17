@@ -8,6 +8,7 @@ namespace SpaceJuJu {
     sealed class GameStartup : MonoBehaviour {
         EcsSystems _systems;
         EcsWorld _world;
+        public GameObject playerPrefab;
 
         void OnEnable () {
             _world = new EcsWorld ();
@@ -15,8 +16,7 @@ namespace SpaceJuJu {
             EcsWorldObserver.Create (_world);
 #endif
             _systems = new EcsSystems (_world)
-                .Add(new QuitGameSystem())
-                .Add (new InitSystem())
+                .Add(new StartGameSystem())
                 .Add (new UserInputSystem());
             _systems.Init ();
 #if UNITY_EDITOR

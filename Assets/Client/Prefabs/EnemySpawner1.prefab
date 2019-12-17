@@ -64,8 +64,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 4469210891481753875, guid: 8ed92e1079fa13c449fcdc3163e46754, type: 3}
   spawnValues: {x: 80, y: 0, z: 190}
-  enemyCount: 5
-  spawnWait: 0.25
+  enemyCount: 50
+  spawnWait: 0.05
   startWait: 2
   waveWait: 3
   count: 8
