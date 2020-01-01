@@ -61,6 +61,9 @@ namespace SpaceJuJu {
                             _quitButtonFilter.Entities[0].Destroy();
                             startButtonGO.gameObject.SetActive(false);
                             quitButtonGO.gameObject.SetActive(false);
+                            
+                            _world.NewEntityWith<LevelChange>(out var levelChange);
+                            levelChange.value = 1;
                         }
                     }
 

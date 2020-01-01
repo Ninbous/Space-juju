@@ -10,30 +10,30 @@ namespace SpaceJuJu {
         EcsWorld _world;
         public GameObject playerPrefab;
 
-        void OnEnable () {
-            _world = new EcsWorld ();
+        void OnEnable() {
+            _world = new EcsWorld();
 #if UNITY_EDITOR
-            EcsWorldObserver.Create (_world);
+            EcsWorldObserver.Create(_world);
 #endif
-            _systems = new EcsSystems (_world)
+            _systems = new EcsSystems(_world)
                 .Add(new StartGameSystem())
-                .Add (new UserInputSystem());
-            _systems.Init ();
+                .Add(new LoadLevelSystem())
+                .Add(new UserInputSystem());
+            _systems.Init();
 #if UNITY_EDITOR
-            EcsSystemsObserver.Create (_systems);
+            EcsSystemsObserver.Create(_systems);
 #endif
         }
 
-        void Update ()
-        {
-            _systems.Run ();
-            _world.EndFrame ();
+        void Update() {
+            _systems.Run();
+            _world.EndFrame();
         }
 
-        void OnDisable () {
-            _systems.Destroy ();
+        void OnDisable() {
+            _systems.Destroy();
             _systems = null;
-            _world.Destroy ();
+            _world.Destroy();
             _world = null;
         }
     }
